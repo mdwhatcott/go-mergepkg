@@ -48,7 +48,7 @@ func parseConfig() (result Config) {
 	var dirs string
 	flag.StringVar(&result.Header, "header", "",
 		"A file header to go in the package-level comment of the output file. (Maybe a version number?)")
-	flag.StringVar(&dirs, "dirs", strings.Join([]string{"should", "suite"}, ":"),
+	flag.StringVar(&dirs, "dirs", "",
 		strings.Join([]string{
 			"The colon-separated list of directories containing go files to merge into a single file.",
 			"The package name of the first directory listed will be used as the package name of the output file.",
