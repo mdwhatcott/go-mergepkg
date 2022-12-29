@@ -106,6 +106,9 @@ func main() {
 			if strings.HasSuffix(name, "_test.go") {
 				continue
 			}
+			if !strings.HasSuffix(name, ".go") {
+				continue
+			}
 			emit()
 			emit("// FILE:", name)
 			emit()
