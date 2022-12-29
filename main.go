@@ -90,12 +90,14 @@ func main() {
 			emit("// AUTO-GENERATED:", time.Now())
 			emit("package", imported.Name)
 			emit()
-			emit("import (")
-			for _, pkg := range imports {
-				emit(fmt.Sprintf("%#v", pkg))
+			if len(imports) > 0 {
+				emit("import (")
+				for _, pkg := range imports {
+					emit(fmt.Sprintf("%#v", pkg))
+				}
+				emit(")")
+				emit()
 			}
-			emit(")")
-			emit()
 		}
 
 		for _, file := range listing {
